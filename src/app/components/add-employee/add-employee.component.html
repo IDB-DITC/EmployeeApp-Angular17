@@ -1,0 +1,21 @@
+<p>add-employee works!</p>
+
+<form [formGroup]="employeeForm" (ngSubmit)="SubmitForm()">
+    <p>
+        <label for="emp-Name">Name:</label>
+        <input id="emp-Name" class="form-control" formControlName="studentName" />
+
+        <span class="alert alert-danger" *ngIf="employeeName.invalid && employeeName.errors?.['required']">
+            name  required
+        </span>
+    </p>
+     <p>
+         <label for="emp-address">Address:</label>
+         <input id="emp-address"  class="form-control" formControlName="subject" />
+     </p>
+
+    <hr />
+    <button type="submit" [disabled]="employeeForm.invalid">Save</button>
+
+
+</form>
